@@ -34,8 +34,35 @@
 
   <section style="max-width: 800px; margin: 0 auto;">
     <h2>美术展示 </h2>
-    <img src="大妖草图.jpg" width="500" height="400"/>
-    <br>
+<div class="adaptive-image">
+    <img src="大妖草图.jpg" alt="美术草图">
+</div>
+
+<style>
+.adaptive-image {
+    width: 100%;
+    max-width: 800px;      /* 最大限制 */
+    margin: 0 auto;
+    position: relative;
+}
+
+.adaptive-image::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;   /* 16:9 比例 (9/16=56.25%) */
+    /* 或根据你的图片比例调整 */
+}
+
+.adaptive-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* 完整显示图片，可能留白 */
+    /* 或 object-fit: cover; 填充容器，可能裁剪 */
+}
+</style>
     <p>持续打磨中...... </p>
   </section>
 
